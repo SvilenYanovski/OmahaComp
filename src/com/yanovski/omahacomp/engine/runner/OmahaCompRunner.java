@@ -1,4 +1,4 @@
-package com.yanovski.omahacomp.engine;
+package com.yanovski.omahacomp.engine.runner;
 
 public interface OmahaCompRunner {
     void start();
