@@ -21,19 +21,13 @@ public class InputReaderImpl implements InputReader {
 
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
             Map<String, OmahaDeal> result = new HashMap<>();
-            //stream.forEach(System.out::println);
 
             stream.forEach(line -> {
                 OmahaDeal deal = new OmahaDeal();
-
                 String[] fileLineTokens = line.split(" ");
-
                 deal.getPlayers().add(createPlayer(fileLineTokens[0]));
-
                 deal.getPlayers().add(createPlayer(fileLineTokens[1]));
-
                 deal.setBoard(createBoard(fileLineTokens[2]));
-
                 result.put(line, deal);
             });
 
@@ -55,8 +49,12 @@ public class InputReaderImpl implements InputReader {
         OmahaHand hand = new OmahaHand();
         hand.getHandCards().addAll(parseHand(fileLineToken.substring(
                 fileLineToken.lastIndexOf(':') + 1).trim()));
+
         OmahaPlayer player = new OmahaPlayer();
+        player.setName(fileLineToken.substring(
+                0, fileLineToken.lastIndexOf(':') + 1).trim());
         player.setHand(hand);
+
         return player;
     }
 

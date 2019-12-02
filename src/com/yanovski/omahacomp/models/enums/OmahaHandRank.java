@@ -9,7 +9,8 @@ public enum OmahaHandRank {
     THREE_OF_A_KIND(4),
     TWO_PAIR(3),
     ONE_PAIR(2),
-    HIGH_CARD(1);
+    HIGH_CARD(1),
+    LOW_HAND(0);
 
     private int value;
 

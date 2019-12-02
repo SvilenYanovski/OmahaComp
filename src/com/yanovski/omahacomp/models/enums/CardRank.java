@@ -1,7 +1,7 @@
 package com.yanovski.omahacomp.models.enums;
 
 public enum CardRank {
-    ACE(11),
+    ACE(15),
     TWO(2),
     THREE(3),
     FOUR(4),

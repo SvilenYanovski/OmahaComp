@@ -21,7 +21,13 @@ public class OutputWriterImpl implements OutputWriter {
                 try {
                     writer.write(key);
                     writer.newLine();
-                    writer.write("=> Hello World!");
+                    writer.write("=> " + value.getEvaluation().getHighWinners().get(0).getName());
+                    writer.write(" wins High (" + value.getEvaluation().getHighWinners().get(0).getHiEvaluation().getOmahaHandRank() + "); ");
+
+                    if (value.getEvaluation().getLowWinners().size() > 0 && value.getEvaluation().getLowWinners().get(0) != null) {
+                        writer.write(value.getEvaluation().getLowWinners().get(0).getName() + " wins Low (");
+                        writer.write(value.getEvaluation().getLowWinners().get(0).getLoEvaluation().getHighCard().getRank().toString() + ")");
+                    }
                     writer.newLine();
                 } catch (IOException e) {
                     e.printStackTrace();

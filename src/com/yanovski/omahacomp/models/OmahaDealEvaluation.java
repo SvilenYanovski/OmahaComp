@@ -1,10 +1,11 @@
 package com.yanovski.omahacomp.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OmahaDealEvaluation {
-    private List<OmahaPlayer> highWinners;
-    private List<OmahaPlayer> lowWinners;
+    private List<OmahaPlayer> highWinners = new ArrayList<>();
+    private List<OmahaPlayer> lowWinners = new ArrayList<>();
 
     //Getters and Setters
     public List<OmahaPlayer> getHighWinners() {

@@ -1,5 +1,8 @@
 package com.yanovski.omahacomp.config;
 
+/**
+ * Config class for shared constants
+ */
 public interface AppConstants {
     String EVALUATE_TYPE_HIGH = "HIGH";
     String EVALUATE_TYPE_LOW = "LOW";
